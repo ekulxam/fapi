@@ -24,7 +24,7 @@ import net.minecraft.network.protocol.common.ServerboundCustomPayloadPacket;
 @Mixin(ServerboundCustomPayloadPacket.class)
 public interface ServerboundCustomPayloadPacketAccessor {
 	@Accessor("MAX_PAYLOAD_SIZE")
-	static int getMaxPayloadSize() {
+	static int fabric_getMaxPayloadSize() {
 		throw new UnsupportedOperationException("Implemented via mixin");
 	}
 }

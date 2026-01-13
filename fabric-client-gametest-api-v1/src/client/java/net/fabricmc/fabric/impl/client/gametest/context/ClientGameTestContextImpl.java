@@ -250,7 +250,7 @@ public final class ClientGameTestContextImpl implements ClientGameTestContext {
 		final String buttonText = Component.translatable(translationKey).getString();
 		final ScreenAccessor screenAccessor = (ScreenAccessor) screen;
 
-		for (Renderable renderable : screenAccessor.getRenderables()) {
+		for (Renderable renderable : screenAccessor.fabric_getRenderables()) {
 			if (renderable instanceof AbstractButton button && pressMatchingButton(button, buttonText)) {
 				return true;
 			}
@@ -286,7 +286,7 @@ public final class ClientGameTestContextImpl implements ClientGameTestContext {
 		if (widget instanceof CycleButton<?> button) {
 			CycleButtonAccessor accessor = (CycleButtonAccessor) button;
 
-			if (text.equals(accessor.getName().getString())) {
+			if (text.equals(accessor.fabric_getName().getString())) {
 				button.onPress(clickEvent);
 				return true;
 			}

@@ -24,6 +24,6 @@ import net.minecraft.server.level.ChunkMap;
 
 @Mixin(ChunkMap.class)
 public interface ChunkMapAccessor {
-	@Accessor
-	Int2ObjectMap<EntityTrackerAccessor> getEntityMap();
+	@Accessor("entityMap")
+	Int2ObjectMap<EntityTrackerAccessor> fabric_getEntityMap();
 }

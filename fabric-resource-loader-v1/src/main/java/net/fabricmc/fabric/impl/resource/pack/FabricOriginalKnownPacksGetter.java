@@ -24,5 +24,5 @@ public interface FabricOriginalKnownPacksGetter {
 	/**
 	 * @return the data packs known at server start
 	 */
-	List<KnownPack> fabric$getOriginalKnownPacks();
+	List<KnownPack> fabric_getOriginalKnownPacks();
 }

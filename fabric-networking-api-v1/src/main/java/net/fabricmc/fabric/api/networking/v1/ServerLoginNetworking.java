@@ -123,7 +123,7 @@ public final class ServerLoginNetworking {
 	public static MinecraftServer getServer(ServerLoginPacketListenerImpl listener) {
 		Objects.requireNonNull(listener, "Packet listener cannot be null");
 
-		return ((ServerLoginPacketListenerImplAccessor) listener).getServer();
+		return ((ServerLoginPacketListenerImplAccessor) listener).fabric_getServer();
 	}
 
 	/**

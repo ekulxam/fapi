@@ -160,7 +160,7 @@ public final class ClientCommandInternals {
 		List<ParsedCommandNode<FabricClientCommandSource>> nodes = parseResults.getContext().getNodes();
 
 		if (nodes.isEmpty()) {
-			throw HelpCommandAccessor.getFailedException().create();
+			throw HelpCommandAccessor.fabric_getFailedException().create();
 		}
 
 		return executeHelp(Iterables.getLast(nodes).getNode(), context);

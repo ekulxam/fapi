@@ -23,13 +23,13 @@ public interface FabricResourceReloader extends PreparableReloadListener {
 	/**
 	 * {@return the unique identifier of this Vanilla resource reloader}
 	 */
-	Identifier fabric$getId();
+	Identifier fabric_getId();
 
 	@Override
 	default String getName() {
 		// Give a more descriptive name to Vanilla resource reloaders
 		// as in production their intermediary class names are not meaningful
 		// when profiling.
-		return this.fabric$getId() + " (" + this.getClass().getSimpleName() + ")";
+		return this.fabric_getId() + " (" + this.getClass().getSimpleName() + ")";
 	}
 }

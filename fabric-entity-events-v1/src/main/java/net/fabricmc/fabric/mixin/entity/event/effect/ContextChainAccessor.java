@@ -25,6 +25,6 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 
 @Mixin(ContextChain.class)
 public interface ContextChainAccessor<S> {
-	@Accessor
-	List<CommandContext<S>> getModifiers();
+	@Accessor("modifiers")
+	List<CommandContext<S>> fabric_getModifiers();
 }

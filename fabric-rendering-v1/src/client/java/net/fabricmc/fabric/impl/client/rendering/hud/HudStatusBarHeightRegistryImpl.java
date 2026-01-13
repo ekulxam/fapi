@@ -78,7 +78,7 @@ public final class HudStatusBarHeightRegistryImpl implements ClientModInitialize
 	static final StatusBarHeightProvider HEALTH_BAR = (Player player) -> {
 		Gui hud = Minecraft.getInstance().gui;
 		int playerHealth = Mth.ceil(player.getHealth());
-		int displayHealth = ((GuiAccessor) hud).fabric$getRenderHealthValue();
+		int displayHealth = ((GuiAccessor) hud).fabric_getDisplayHealth();
 		float maxHealth = Math.max((float) player.getAttributeValue(Attributes.MAX_HEALTH),
 				Math.max(displayHealth, playerHealth));
 		int absorptionAmount = Mth.ceil(player.getAbsorptionAmount());
@@ -97,17 +97,17 @@ public final class HudStatusBarHeightRegistryImpl implements ClientModInitialize
 	 */
 	static final StatusBarHeightProvider MOUNT_HEALTH = (Player player) -> {
 		Gui hud = Minecraft.getInstance().gui;
-		LivingEntity livingEntity = ((GuiAccessor) hud).fabric$callGetRiddenEntity();
-		int vehicleMaxHearts = ((GuiAccessor) hud).fabric$callGetHeartCount(livingEntity);
-		return ((GuiAccessor) hud).fabric$callGetHeartRows(vehicleMaxHearts) * 10;
+		LivingEntity livingEntity = ((GuiAccessor) hud).fabric_callGetRiddenEntity();
+		int vehicleMaxHearts = ((GuiAccessor) hud).fabric_callGetHeartCount(livingEntity);
+		return ((GuiAccessor) hud).fabric_callGetHeartRows(vehicleMaxHearts) * 10;
 	};
 	/**
 	 * Height provider for the vanilla food bar.
 	 */
 	static final StatusBarHeightProvider FOOD_BAR = (Player player) -> {
 		Gui hud = Minecraft.getInstance().gui;
-		LivingEntity livingEntity = ((GuiAccessor) hud).fabric$callGetRiddenEntity();
-		return ((GuiAccessor) hud).fabric$callGetHeartCount(livingEntity) == 0 ? 10 : 0;
+		LivingEntity livingEntity = ((GuiAccessor) hud).fabric_callGetRiddenEntity();
+		return ((GuiAccessor) hud).fabric_callGetHeartCount(livingEntity) == 0 ? 10 : 0;
 	};
 	/**
 	 * Height provider for the vanilla air bar.
@@ -215,7 +215,7 @@ public final class HudStatusBarHeightRegistryImpl implements ClientModInitialize
 			throw new IllegalArgumentException("Unknown status bar: " + id);
 		}
 
-		Player player = ((GuiAccessor) Minecraft.getInstance().gui).fabric$callGetCameraPlayer();
+		Player player = ((GuiAccessor) Minecraft.getInstance().gui).fabric_callGetCameraPlayer();
 
 		if (player == null) {
 			throw new IllegalStateException("Trying to get status bar height for " + id + " without a camera player");
@@ -368,7 +368,7 @@ public final class HudStatusBarHeightRegistryImpl implements ClientModInitialize
 	private static void replaceVanillaElement(Identifier id, ResolvedHeightProvider heightProvider) {
 		HudElementRegistry.replaceElement(id, (HudElement layer) -> {
 			return (GuiGraphics graphics, DeltaTracker deltaTracker) -> {
-				Player player = ((GuiAccessor) Minecraft.getInstance().gui).fabric$callGetCameraPlayer();
+				Player player = ((GuiAccessor) Minecraft.getInstance().gui).fabric_callGetCameraPlayer();
 				int height = player != null ? heightProvider.getResolvedHeight(player) : 0;
 
 				if (height != 0) {

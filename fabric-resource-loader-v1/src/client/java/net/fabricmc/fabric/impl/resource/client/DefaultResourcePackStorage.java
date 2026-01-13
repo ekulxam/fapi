@@ -84,7 +84,7 @@ public final class DefaultResourcePackStorage {
 
 		for (Pack profile : profiles) {
 			// Hidden packs are always enabled.
-			if (((FabricPack) profile).fabric$isHidden()) {
+			if (((FabricPack) profile).fabric_isHidden()) {
 				continue;
 			}
 

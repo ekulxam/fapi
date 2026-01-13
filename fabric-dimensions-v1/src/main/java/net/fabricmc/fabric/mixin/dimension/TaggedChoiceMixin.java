@@ -34,7 +34,7 @@ public class TaggedChoiceMixin implements TaggedChoiceExtension {
 	boolean failSoft = false;
 
 	@Override
-	public void fabric$setFailSoft(boolean cond) {
+	public void fabric_setFailSoft(boolean cond) {
 		failSoft = cond;
 	}
 
@@ -50,7 +50,7 @@ public class TaggedChoiceMixin implements TaggedChoiceExtension {
 			Type returnValue = cir.getReturnValue();
 
 			if (returnValue instanceof TaggedChoice.TaggedChoiceType<?> taggedChoiceType) {
-				((TaggedChoiceTypeExtension) (Object) taggedChoiceType).fabric$setFailSoft(true);
+				((TaggedChoiceTypeExtension) (Object) taggedChoiceType).fabric_setFailSoft(true);
 			}
 		}
 	}

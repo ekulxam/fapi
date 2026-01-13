@@ -30,14 +30,14 @@ import net.minecraft.world.item.enchantment.Enchantment;
 @Mixin(Enchantment.Builder.class)
 public interface EnchantmentBuilderAccessor {
 	@Accessor("definition")
-	Enchantment.EnchantmentDefinition getDefinition();
+	Enchantment.EnchantmentDefinition fabric_getDefinition();
 
 	@Accessor("exclusiveSet")
-	HolderSet<Enchantment> getExclusiveSet();
+	HolderSet<Enchantment> fabric_getExclusiveSet();
 
 	@Accessor("effectMapBuilder")
-	DataComponentMap.Builder getEffectMap();
+	DataComponentMap.Builder fabric_getEffectMap();
 
 	@Invoker("getEffectsList")
-	<E> List<E> invokeGetEffectsList(DataComponentType<List<E>> type);
+	<E> List<E> fabric_invokeGetEffectsList(DataComponentType<List<E>> type);
 }

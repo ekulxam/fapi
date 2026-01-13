@@ -42,7 +42,7 @@ public class SimpleReloadInstanceMixin {
 	)
 	private static List<PreparableReloadListener> sortSimple(List<PreparableReloadListener> reloaders, @Local(argsOnly = true) ResourceManager resourceManager) {
 		if (resourceManager instanceof FabricMultiPackResourceManager flrm) {
-			return ResourceLoaderImpl.sort(flrm.fabric$getPackType(), reloaders);
+			return ResourceLoaderImpl.sort(flrm.fabric_getPackType(), reloaders);
 		}
 
 		return reloaders;
@@ -57,7 +57,7 @@ public class SimpleReloadInstanceMixin {
 	)
 	private static List<PreparableReloadListener> sortProfiled(List<PreparableReloadListener> reloaders, @Local(argsOnly = true) ResourceManager resourceManager) {
 		if (resourceManager instanceof FabricMultiPackResourceManager flrm) {
-			return ResourceLoaderImpl.sort(flrm.fabric$getPackType(), reloaders);
+			return ResourceLoaderImpl.sort(flrm.fabric_getPackType(), reloaders);
 		}
 
 		return reloaders;

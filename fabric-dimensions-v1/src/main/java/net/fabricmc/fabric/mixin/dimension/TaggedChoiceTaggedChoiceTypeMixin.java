@@ -64,7 +64,7 @@ public class TaggedChoiceTaggedChoiceTypeMixin<K> implements TaggedChoiceTypeExt
 	}
 
 	@Override
-	public void fabric$setFailSoft(boolean cond) {
+	public void fabric_setFailSoft(boolean cond) {
 		failSoft = cond;
 	}
 }

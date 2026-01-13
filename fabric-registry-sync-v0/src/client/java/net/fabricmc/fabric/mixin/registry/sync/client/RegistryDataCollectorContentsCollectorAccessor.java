@@ -28,6 +28,6 @@ import net.minecraft.resources.ResourceKey;
 
 @Mixin(targets = "net.minecraft.client.multiplayer.RegistryDataCollector$ContentsCollector")
 public interface RegistryDataCollectorContentsCollectorAccessor {
-	@Accessor
-	Map<ResourceKey<? extends Registry<?>>, List<RegistrySynchronization.PackedRegistryEntry>> getElements();
+	@Accessor("elements")
+	Map<ResourceKey<? extends Registry<?>>, List<RegistrySynchronization.PackedRegistryEntry>> fabric_getElements();
 }

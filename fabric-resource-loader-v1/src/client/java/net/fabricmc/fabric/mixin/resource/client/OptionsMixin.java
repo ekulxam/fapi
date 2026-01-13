@@ -49,6 +49,6 @@ public class OptionsMixin {
 	private boolean excludeInternalResourcePacksFromRefreshCheck(Pack instance, Operation<Boolean> original) {
 		// Treat Fabric hidden resource packs as pinned during the check for changed resource packs,
 		// so that they won't count as changed when refreshing resource packs
-		return original.call(instance) || ((FabricPack) instance).fabric$isHidden();
+		return original.call(instance) || ((FabricPack) instance).fabric_isHidden();
 	}
 }

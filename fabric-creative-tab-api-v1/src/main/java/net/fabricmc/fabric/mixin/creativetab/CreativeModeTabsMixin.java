@@ -99,8 +99,8 @@ public class CreativeModeTabsMixin {
 			vanillaCreativeModeTab.fabric_setPage((count / TABS_PER_PAGE) + 1);
 			int pageIndex = count % TABS_PER_PAGE;
 			CreativeModeTab.Row row = pageIndex < (TABS_PER_PAGE / 2) ? CreativeModeTab.Row.TOP : CreativeModeTab.Row.BOTTOM;
-			creativeModeTabAccessor.setRow(row);
-			creativeModeTabAccessor.setColumn(row == CreativeModeTab.Row.TOP ? pageIndex % TABS_PER_PAGE : (pageIndex - TABS_PER_PAGE / 2) % (TABS_PER_PAGE));
+			creativeModeTabAccessor.fabric_setRow(row);
+			creativeModeTabAccessor.fabric_setColumn(row == CreativeModeTab.Row.TOP ? pageIndex % TABS_PER_PAGE : (pageIndex - TABS_PER_PAGE / 2) % (TABS_PER_PAGE));
 
 			count++;
 		}

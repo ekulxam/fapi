@@ -23,6 +23,6 @@ import net.minecraft.client.gui.screens.TitleScreen;
 
 @Mixin(TitleScreen.class)
 public interface TitleScreenAccessor {
-	@Accessor
-	boolean isFading();
+	@Accessor("fading")
+	boolean fabric_isFading();
 }

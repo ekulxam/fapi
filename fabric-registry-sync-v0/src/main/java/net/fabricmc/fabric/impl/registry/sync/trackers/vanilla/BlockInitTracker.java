@@ -33,8 +33,8 @@ public final class BlockInitTracker {
 		final int xLength = Mth.ceil(Mth.sqrt(blockStateList.size()));
 		final int zLength = Mth.ceil(blockStateList.size() / (float) xLength);
 
-		DebugLevelSourceAccessor.setALL_BLOCKS(blockStateList);
-		DebugLevelSourceAccessor.setGRID_WIDTH(xLength);
-		DebugLevelSourceAccessor.setGRID_HEIGHT(zLength);
+		DebugLevelSourceAccessor.fabric_setAllBlocks(blockStateList);
+		DebugLevelSourceAccessor.fabric_setGridWidth(xLength);
+		DebugLevelSourceAccessor.fabric_setGridHeight(zLength);
 	}
 }

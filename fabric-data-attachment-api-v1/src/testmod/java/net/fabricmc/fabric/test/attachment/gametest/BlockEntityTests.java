@@ -44,7 +44,7 @@ public class BlockEntityTests {
 		BlockPos pos = BlockPos.ZERO.above();
 
 		for (Holder<BlockEntityType<?>> holder : BuiltInRegistries.BLOCK_ENTITY_TYPE.asHolderIdMap()) {
-			Block supportBlock = ((BlockEntityTypeAccessor) holder.value()).getBlocks().iterator().next();
+			Block supportBlock = ((BlockEntityTypeAccessor) holder.value()).fabric_getValidBlocks().iterator().next();
 
 			if (!supportBlock.isEnabled(helper.getLevel().enabledFeatures())) {
 				LOGGER.info("Skipped disabled feature {}", holder);

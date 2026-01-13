@@ -154,6 +154,7 @@ Fabric API makes strong backwards compatibility guarantees, by which contributor
 - All names should follow the [Yarn naming standards](https://github.com/FabricMC/yarn/blob/HEAD/CONVENTIONS.md).
 - If a class only contains getter methods, the `get` prefix may be omitted for methods. The `get` prefix may also be omitted where it is not appropriate.
 - Accessor mixins should be named **Target**Accessor, other mixins should be named **Target**Mixin, where `Target` is the target class name. More details in the mixin section below.
+  - Duck interface and accessor methods should be prefixed with `fabric_`. Regular mixin methods do not need this.
 
 ### Events
 

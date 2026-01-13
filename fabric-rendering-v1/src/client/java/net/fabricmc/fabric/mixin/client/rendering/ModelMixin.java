@@ -45,7 +45,7 @@ abstract class ModelMixin<S> implements FabricModel<S> {
 
 	@Inject(method = "<init>", at = @At("TAIL"))
 	private void fillChildPartMap(ModelPart root, Function<Identifier, RenderType> layerFactory, CallbackInfo ci) {
-		((ModelPartAccessor) (Object) root).fabric$callForEachChild(childPartMap::putIfAbsent);
+		((ModelPartAccessor) (Object) root).fabric_callForEachChild(childPartMap::putIfAbsent);
 	}
 
 	@Override
@@ -57,7 +57,7 @@ abstract class ModelMixin<S> implements FabricModel<S> {
 	@Override
 	public void copyTransforms(Model<?> model) {
 		copyTransforms(model.root(), root());
-		((ModelPartAccessor) (Object) model.root()).fabric$callForEachChild((name, part) -> {
+		((ModelPartAccessor) (Object) model.root()).fabric_callForEachChild((name, part) -> {
 			ModelPart childPart = getChildPart(name);
 
 			if (childPart != null) {

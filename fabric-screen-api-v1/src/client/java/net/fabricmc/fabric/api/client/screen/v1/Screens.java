@@ -62,7 +62,7 @@ public final class Screens {
 	public static Minecraft getMinecraft(Screen screen) {
 		Objects.requireNonNull(screen, "Screen cannot be null");
 
-		return ((ScreenAccessor) screen).getClient();
+		return ((ScreenAccessor) screen).fabric_getMinecraft();
 	}
 
 	private Screens() {

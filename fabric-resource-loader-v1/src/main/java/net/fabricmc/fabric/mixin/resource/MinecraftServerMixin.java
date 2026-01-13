@@ -56,7 +56,7 @@ public class MinecraftServerMixin implements DataResourceStore, FabricOriginalKn
 	@Override
 	public <T> T getOrThrow(Key<T> key) {
 		return ((FabricDataResourceStoreHolder) this.resources.managers())
-				.fabric$getDataResourceStore()
+				.fabric_getDataResourceStore()
 				.getOrThrow(key);
 	}
 
@@ -87,7 +87,7 @@ public class MinecraftServerMixin implements DataResourceStore, FabricOriginalKn
 	}
 
 	@Override
-	public List<KnownPack> fabric$getOriginalKnownPacks() {
+	public List<KnownPack> fabric_getOriginalKnownPacks() {
 		return this.originalKnownPacks;
 	}
 }

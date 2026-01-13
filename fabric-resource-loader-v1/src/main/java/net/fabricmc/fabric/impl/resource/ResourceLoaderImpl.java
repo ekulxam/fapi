@@ -127,7 +127,7 @@ public sealed class ResourceLoaderImpl implements ResourceLoader permits DataRes
 
 	private Identifier getResourceReloaderIdForSorting(PreparableReloadListener reloader) {
 		if (reloader instanceof FabricResourceReloader identifiable) {
-			return identifiable.fabric$getId();
+			return identifiable.fabric_getId();
 		} else {
 			if (DEBUG_RELOADERS_IDENTITY) {
 				LOGGER.warn(

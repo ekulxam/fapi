@@ -24,6 +24,6 @@ import net.minecraft.client.KeyMapping;
 
 @Mixin(KeyMapping.class)
 public interface KeyMappingAccessor {
-	@Accessor
-	InputConstants.Key getKey();
+	@Accessor("key")
+	InputConstants.Key fabric_getKey();
 }

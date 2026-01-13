@@ -25,5 +25,5 @@ import net.minecraft.client.renderer.block.BlockRenderDispatcher;
 @Mixin(BlockRenderDispatcher.class)
 public interface BlockRenderDispatcherAccessor {
 	@Accessor("blockColors")
-	BlockColors getBlockColors();
+	BlockColors fabric_getBlockColors();
 }

@@ -27,17 +27,17 @@ import net.minecraft.world.entity.player.Player;
 @Mixin(Gui.class)
 public interface GuiAccessor {
 	@Accessor("displayHealth")
-	int fabric$getRenderHealthValue();
+	int fabric_getDisplayHealth();
 
 	@Invoker("getPlayerVehicleWithHealth")
-	LivingEntity fabric$callGetRiddenEntity();
+	LivingEntity fabric_callGetRiddenEntity();
 
 	@Invoker("getVehicleMaxHearts")
-	int fabric$callGetHeartCount(LivingEntity entity);
+	int fabric_callGetHeartCount(LivingEntity entity);
 
 	@Invoker("getVisibleVehicleHeartRows")
-	int fabric$callGetHeartRows(int health);
+	int fabric_callGetHeartRows(int health);
 
 	@Invoker("getCameraPlayer")
-	Player fabric$callGetCameraPlayer();
+	Player fabric_callGetCameraPlayer();
 }

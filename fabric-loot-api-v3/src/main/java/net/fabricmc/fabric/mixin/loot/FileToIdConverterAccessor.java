@@ -24,5 +24,5 @@ import net.minecraft.resources.FileToIdConverter;
 @Mixin(FileToIdConverter.class)
 public interface FileToIdConverterAccessor {
 	@Accessor("prefix")
-	String getPrefix();
+	String fabric_getPrefix();
 }

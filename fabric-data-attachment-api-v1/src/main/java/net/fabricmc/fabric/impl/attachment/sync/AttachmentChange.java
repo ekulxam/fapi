@@ -60,7 +60,7 @@ public record AttachmentChange(AttachmentTargetInfo<?> targetInfo, AttachmentTyp
 			AttachmentChange::new
 	);
 	private static final int MAX_PADDING_SIZE_IN_BYTES = AttachmentTargetInfo.MAX_SIZE_IN_BYTES + AttachmentSync.MAX_IDENTIFIER_SIZE;
-	private static final int MAX_DATA_SIZE_IN_BYTES = ServerboundCustomPayloadPacketAccessor.getMaxPayloadSize() - MAX_PADDING_SIZE_IN_BYTES;
+	private static final int MAX_DATA_SIZE_IN_BYTES = ServerboundCustomPayloadPacketAccessor.fabric_getMaxPayloadSize() - MAX_PADDING_SIZE_IN_BYTES;
 
 	@SuppressWarnings("unchecked")
 	public static AttachmentChange create(AttachmentTargetInfo<?> targetInfo, AttachmentType<?> type, @Nullable Object value, RegistryAccess registryAccess) {
@@ -91,12 +91,12 @@ public record AttachmentChange(AttachmentTargetInfo<?> targetInfo, AttachmentTyp
 	}
 
 	public static void partitionAndSendPackets(List<AttachmentChange> changes, ServerPlayer player) {
-		Set<Identifier> supported = ((SupportedAttachmentsConnection) ((ServerCommonPacketListenerImplAccessor) player.connection).getConnection())
+		Set<Identifier> supported = ((SupportedAttachmentsConnection) ((ServerCommonPacketListenerImplAccessor) player.connection).fabric_getConnection())
 				.fabric_getSupportedAttachments();
 		// sort by size to better partition packets
 		changes.sort(Comparator.comparingInt(c -> c.data().length));
 		List<AttachmentChange> packetChanges = new ArrayList<>();
-		int maxVarIntSize = VarIntAccessor.getMaxByteSize();
+		int maxVarIntSize = VarIntAccessor.fabric_getMaxByteSize();
 		int byteSize = maxVarIntSize;
 
 		for (AttachmentChange change : changes) {

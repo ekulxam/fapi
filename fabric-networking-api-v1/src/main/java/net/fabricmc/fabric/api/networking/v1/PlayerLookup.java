@@ -113,11 +113,11 @@ public final class PlayerLookup {
 
 		if (manager instanceof ServerChunkCache) {
 			ChunkMap chunkMap = ((ServerChunkCache) manager).chunkMap;
-			EntityTrackerAccessor tracker = ((ChunkMapAccessor) chunkMap).getEntityMap().get(entity.getId());
+			EntityTrackerAccessor tracker = ((ChunkMapAccessor) chunkMap).fabric_getEntityMap().get(entity.getId());
 
 			// return an immutable collection to guard against accidental removals.
 			if (tracker != null) {
-				return tracker.getSeenBy()
+				return tracker.fabric_getSeenBy()
 						.stream().map(ServerPlayerConnection::getPlayer).collect(Collectors.toUnmodifiableSet());
 			}
 

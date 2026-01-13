@@ -25,9 +25,9 @@ import net.minecraft.server.network.ServerLoginPacketListenerImpl;
 
 @Mixin(ServerLoginPacketListenerImpl.class)
 public interface ServerLoginPacketListenerImplAccessor {
-	@Accessor
-	MinecraftServer getServer();
+	@Accessor("server")
+	MinecraftServer fabric_getServer();
 
-	@Accessor
-	Connection getConnection();
+	@Accessor("connection")
+	Connection fabric_getConnection();
 }

@@ -24,5 +24,5 @@ import net.minecraft.client.gui.screens.worldselection.EditGameRulesScreen;
 @Mixin(EditGameRulesScreen.RuleList.class)
 public interface EditGameRulesScreenRuleListAccessor {
 	@Accessor("this$0")
-	EditGameRulesScreen getThis();
+	EditGameRulesScreen fabric_getThis();
 }

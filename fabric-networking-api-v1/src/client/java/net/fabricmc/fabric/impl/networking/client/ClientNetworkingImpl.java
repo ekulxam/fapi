@@ -81,7 +81,7 @@ public final class ClientNetworkingImpl {
 	 */
 	@Nullable
 	public static Connection getLoginConnection() {
-		final Connection connection = ((MinecraftAccessor) Minecraft.getInstance()).getPendingConnection();
+		final Connection connection = ((MinecraftAccessor) Minecraft.getInstance()).fabric_getPendingConnection();
 
 		// Check if we are connecting to an integrated server. This will set the field on Minecraft
 		if (connection != null) {
@@ -90,7 +90,7 @@ public final class ClientNetworkingImpl {
 			// We are probably connecting to a remote server.
 			// Check if the ConnectScreen is the currentScreen to determine that:
 			if (Minecraft.getInstance().screen instanceof ConnectScreen) {
-				return ((ConnectScreenAccessor) Minecraft.getInstance().screen).getConnection();
+				return ((ConnectScreenAccessor) Minecraft.getInstance().screen).fabric_getConnection();
 			}
 		}
 

@@ -43,7 +43,7 @@ public class RegistryDataCollectorMixin {
 	 */
 	@WrapOperation(method = "loadNewElementsAndTags", at = @At(value = "FIELD", target = "Lnet/minecraft/resources/RegistryDataLoader;SYNCHRONIZED_REGISTRIES:Ljava/util/List;", opcode = Opcodes.GETSTATIC))
 	private List<RegistryDataLoader.RegistryData<?>> skipEmptyRegistries(Operation<List<RegistryDataLoader.RegistryData<?>>> operation, ResourceProvider resourceFactory, @Coerce RegistryDataCollectorContentsCollectorAccessor storage, boolean bl) {
-		Map<ResourceKey<? extends Registry<?>>, List<RegistrySynchronization.PackedRegistryEntry>> dynamicRegistries = storage.getElements();
+		Map<ResourceKey<? extends Registry<?>>, List<RegistrySynchronization.PackedRegistryEntry>> dynamicRegistries = storage.fabric_getElements();
 
 		List<RegistryDataLoader.RegistryData<?>> result = new ArrayList<>(operation.call());
 		result.removeIf(entry -> DynamicRegistriesImpl.SKIP_EMPTY_SYNC_REGISTRIES.contains(entry.key()) && !dynamicRegistries.containsKey(entry.key()));

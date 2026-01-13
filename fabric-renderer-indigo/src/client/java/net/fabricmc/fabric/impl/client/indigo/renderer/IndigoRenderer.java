@@ -74,7 +74,7 @@ public class IndigoRenderer implements Renderer {
 
 		if (renderShape != RenderShape.INVISIBLE) {
 			BlockStateModel model = renderDispatcher.getBlockModel(state);
-			int tint = ((BlockRenderDispatcherAccessor) renderDispatcher).getBlockColors().getColor(state, null, null, 0);
+			int tint = ((BlockRenderDispatcherAccessor) renderDispatcher).fabric_getBlockColors().getColor(state, null, null, 0);
 			float red = (tint >> 16 & 255) / 255.0F;
 			float green = (tint >> 8 & 255) / 255.0F;
 			float blue = (tint & 255) / 255.0F;

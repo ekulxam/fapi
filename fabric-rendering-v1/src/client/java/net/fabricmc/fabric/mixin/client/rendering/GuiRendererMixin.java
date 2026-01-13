@@ -116,11 +116,11 @@ abstract class GuiRendererMixin implements GuiRendererExtensions {
 			)
 	)
 	private void fixNonQuadIndexing(RenderPass instance, GpuBuffer buffer, VertexFormat.IndexType indexType, Operation<Void> original, @Coerce DrawAccessor draw) {
-		RenderPipeline pipeline = draw.fabric$pipeline();
+		RenderPipeline pipeline = draw.fabric_getPipeline();
 
 		if (pipeline.usePipelineDrawModeForGui() && pipeline.getVertexFormatMode() != VertexFormat.Mode.QUADS) {
 			RenderSystem.AutoStorageIndexBuffer shapeIndexBuffer = RenderSystem.getSequentialBuffer(pipeline.getVertexFormatMode());
-			buffer = shapeIndexBuffer.getBuffer(draw.fabric$indexCount());
+			buffer = shapeIndexBuffer.getBuffer(draw.fabric_getIndexCount());
 			indexType = shapeIndexBuffer.type();
 		}
 

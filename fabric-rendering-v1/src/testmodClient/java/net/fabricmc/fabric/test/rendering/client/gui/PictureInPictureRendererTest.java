@@ -83,8 +83,8 @@ public class PictureInPictureRendererTest implements ClientModInitializer, Fabri
 	@Override
 	public void runTest(ClientGameTestContext context) {
 		context.runOnClient(client -> {
-			GuiRenderer guiRenderer = ((GameRendererAccessor) client.gameRenderer).getGuiRenderer();
-			Map<Class<? extends PictureInPictureRenderState>, PictureInPictureRenderer<?>> specialElementRenderers = ((GuiRendererAccessor) guiRenderer).getSpecialElementRenderers();
+			GuiRenderer guiRenderer = ((GameRendererAccessor) client.gameRenderer).fabric_getGuiRenderer();
+			Map<Class<? extends PictureInPictureRenderState>, PictureInPictureRenderer<?>> specialElementRenderers = ((GuiRendererAccessor) guiRenderer).fabric_getPictureInPictureRenderers();
 			Set<Class<? extends PictureInPictureRenderState>> missingRenderFactories = new HashSet<>(specialElementRenderers.keySet());
 
 			for (Class<? extends PictureInPictureRenderState> registeredFactoryStateClass : PictureInPictureRendererRegistryImpl.getRegisteredFactoryStateClasses()) {

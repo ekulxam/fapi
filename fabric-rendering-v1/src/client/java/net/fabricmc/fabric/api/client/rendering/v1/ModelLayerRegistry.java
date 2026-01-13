@@ -43,7 +43,7 @@ public final class ModelLayerRegistry {
 			throw new IllegalArgumentException(String.format("Cannot replace registration for model layer \"%s\"", modelLayer));
 		}
 
-		ModelLayersAccessor.getLayers().add(modelLayer);
+		ModelLayersAccessor.fabric_getAllModels().add(modelLayer);
 	}
 
 	/**
@@ -61,7 +61,7 @@ public final class ModelLayerRegistry {
 			));
 		}
 
-		armorModelSet.map(ModelLayersAccessor.getLayers()::add);
+		armorModelSet.map(ModelLayersAccessor.fabric_getAllModels()::add);
 	}
 
 	private ModelLayerRegistry() {

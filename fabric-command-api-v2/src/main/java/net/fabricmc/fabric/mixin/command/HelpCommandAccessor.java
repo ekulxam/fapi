@@ -25,7 +25,7 @@ import net.minecraft.server.commands.HelpCommand;
 @Mixin(HelpCommand.class)
 public interface HelpCommandAccessor {
 	@Accessor("ERROR_FAILED")
-	static SimpleCommandExceptionType getFailedException() {
+	static SimpleCommandExceptionType fabric_getFailedException() {
 		throw new AssertionError("mixin");
 	}
 }

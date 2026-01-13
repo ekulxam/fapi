@@ -74,7 +74,7 @@ public class HudStatusBarHeightsTest implements ClientModInitializer {
 						int width = graphics.guiWidth() / 2 - 91;
 						int height = graphics.guiHeight() - HudStatusBarHeightRegistry.getHeight(
 								VanillaHudElements.HEALTH_BAR);
-						Player player = ((GuiAccessor) hud).fabric$callGetCameraPlayer();
+						Player player = ((GuiAccessor) hud).fabric_callGetCameraPlayer();
 						renderHealth(graphics, player, height, 0, 10, width);
 					}
 				});
@@ -95,7 +95,7 @@ public class HudStatusBarHeightsTest implements ClientModInitializer {
 						int width = graphics.guiWidth() / 2 - 91;
 						int height = graphics.guiHeight() - HudStatusBarHeightRegistry.getHeight(
 								VanillaHudElements.ARMOR_BAR);
-						Player player = ((GuiAccessor) hud).fabric$callGetCameraPlayer();
+						Player player = ((GuiAccessor) hud).fabric_callGetCameraPlayer();
 						renderArmor(graphics, player, height, 0, 10, width);
 					}
 				});
@@ -121,7 +121,7 @@ public class HudStatusBarHeightsTest implements ClientModInitializer {
 						Gui hud = minecraft.gui;
 						int width = graphics.guiWidth() / 2 - 91;
 						int height = graphics.guiHeight() - HudStatusBarHeightRegistry.getHeight(id);
-						Player player = ((GuiAccessor) hud).fabric$callGetCameraPlayer();
+						Player player = ((GuiAccessor) hud).fabric_callGetCameraPlayer();
 						renderToughness(graphics, player, height, 0, 10, width);
 					}
 				});
@@ -142,13 +142,13 @@ public class HudStatusBarHeightsTest implements ClientModInitializer {
 
 					if (minecraft.gameMode.canHurtPlayer()) {
 						Gui hud = minecraft.gui;
-						LivingEntity livingEntity = ((GuiAccessor) hud).fabric$callGetRiddenEntity();
+						LivingEntity livingEntity = ((GuiAccessor) hud).fabric_callGetRiddenEntity();
 
-						if (((GuiAccessor) hud).fabric$callGetHeartCount(livingEntity) == 0) {
+						if (((GuiAccessor) hud).fabric_callGetHeartCount(livingEntity) == 0) {
 							int width = graphics.guiWidth() / 2 + 91;
 							int height = graphics.guiHeight() - HudStatusBarHeightRegistry.getHeight(id);
 							renderStamina(graphics,
-									((GuiAccessor) hud).fabric$callGetCameraPlayer(),
+									((GuiAccessor) hud).fabric_callGetCameraPlayer(),
 									height,
 									width);
 						}
@@ -159,9 +159,9 @@ public class HudStatusBarHeightsTest implements ClientModInitializer {
 
 			if (minecraft.gameMode.canHurtPlayer()) {
 				Gui hud = minecraft.gui;
-				LivingEntity livingEntity = ((GuiAccessor) hud).fabric$callGetRiddenEntity();
+				LivingEntity livingEntity = ((GuiAccessor) hud).fabric_callGetRiddenEntity();
 
-				if (((GuiAccessor) hud).fabric$callGetHeartCount(livingEntity) == 0) {
+				if (((GuiAccessor) hud).fabric_callGetHeartCount(livingEntity) == 0) {
 					return 10;
 				}
 			}

@@ -38,7 +38,7 @@ public record SetupMarkerResourceReloader(
 		store.set(DataResourceLoader.RECIPE_MANAGER_KEY, this.reloadableServerResources.getRecipeManager());
 		store.set(
 				DataResourceLoader.DATA_RESOURCE_STORE_KEY,
-				((FabricDataResourceStoreHolder) this.reloadableServerResources).fabric$getDataResourceStore()
+				((FabricDataResourceStoreHolder) this.reloadableServerResources).fabric_getDataResourceStore()
 		);
 	}
 

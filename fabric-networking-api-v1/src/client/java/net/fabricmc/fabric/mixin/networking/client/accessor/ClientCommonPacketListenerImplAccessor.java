@@ -24,6 +24,6 @@ import net.minecraft.network.Connection;
 
 @Mixin(ClientCommonPacketListenerImpl.class)
 public interface ClientCommonPacketListenerImplAccessor {
-	@Accessor
-	Connection getConnection();
+	@Accessor("connection")
+	Connection fabric_getConnection();
 }

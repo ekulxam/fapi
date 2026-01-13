@@ -43,7 +43,7 @@ public class DefaultItemComponentImpl {
 				if (itemPredicate.test(item)) {
 					DataComponentMap.Builder builder = DataComponentMap.builder().addAll(item.components());
 					builderConsumer.accept(builder, item);
-					((ItemAccessor) item).setComponents(builder.build());
+					((ItemAccessor) item).fabric_setComponents(builder.build());
 				}
 			}
 		}

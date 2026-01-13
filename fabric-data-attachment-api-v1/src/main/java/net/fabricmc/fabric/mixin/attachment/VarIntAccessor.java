@@ -24,7 +24,7 @@ import net.minecraft.network.VarInt;
 @Mixin(VarInt.class)
 public interface VarIntAccessor {
 	@Accessor("MAX_VARINT_SIZE")
-	static int getMaxByteSize() {
+	static int fabric_getMaxByteSize() {
 		throw new UnsupportedOperationException("implemented via mixin");
 	}
 }

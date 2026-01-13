@@ -45,30 +45,30 @@ public class EnchantmentUtil {
 		BuilderExtensions builderExtensions = (BuilderExtensions) builder;
 
 		builder.exclusiveWith(originalEnchantment.exclusiveSet());
-		accessor.getEffectMap().addAll(originalEnchantment.effects());
+		accessor.fabric_getEffectMap().addAll(originalEnchantment.effects());
 
 		originalEnchantment.effects().stream()
 				.forEach(component -> {
 					if (component.value() instanceof List<?> valueList) {
 						// component type cast is checked by the value
-						accessor.invokeGetEffectsList((DataComponentType<List<Object>>) component.type())
+						accessor.fabric_invokeGetEffectsList((DataComponentType<List<Object>>) component.type())
 								.addAll(valueList);
 					}
 				});
 
 		// Reset the modified flag before invoking the event as we setup the builder above
-		builderExtensions.fabric$resetModified();
+		builderExtensions.fabric_resetModified();
 
 		EnchantmentEvents.MODIFY.invoker().modify(key, builder, source);
 
-		if (builderExtensions.fabric$didModify()) {
+		if (builderExtensions.fabric_didModify()) {
 			LOGGER.debug("Enchantment {} was modified", key.identifier());
 
 			return new Enchantment(
 					originalEnchantment.description(),
-					accessor.getDefinition(),
-					accessor.getExclusiveSet(),
-					accessor.getEffectMap().build()
+					accessor.fabric_getDefinition(),
+					accessor.fabric_getExclusiveSet(),
+					accessor.fabric_getEffectMap().build()
 			);
 		}
 
@@ -95,7 +95,7 @@ public class EnchantmentUtil {
 	private EnchantmentUtil() { }
 
 	public interface BuilderExtensions {
-		void fabric$resetModified();
-		boolean fabric$didModify();
+		void fabric_resetModified();
+		boolean fabric_didModify();
 	}
 }

@@ -45,14 +45,14 @@ public final class DoubleRuleEntry extends EditGameRulesScreen.GameRuleEntry {
 				.append(CommonComponents.NEW_LINE)
 		);
 
-		this.input.setValue(accessor.getGameRules().getAsString(doubleRule));
+		this.input.setValue(accessor.fabric_getGameRules().getAsString(doubleRule));
 		this.input.setResponder(value -> {
 			DataResult<Double> dataResult = doubleRule.deserialize(value);
 
 			if (dataResult.isSuccess()) {
 				this.input.setTextColor(0xFFE0E0E0);
 				accessor.callClearInvalid(this);
-				accessor.getGameRules().set(doubleRule, dataResult.getOrThrow(), null);
+				accessor.fabric_getGameRules().set(doubleRule, dataResult.getOrThrow(), null);
 			} else {
 				this.input.setTextColor(0xFFFF0000);
 				accessor.callMarkInvalid(this);

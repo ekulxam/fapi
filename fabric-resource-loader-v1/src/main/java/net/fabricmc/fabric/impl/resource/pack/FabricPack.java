@@ -27,7 +27,7 @@ public interface FabricPack {
 	/**
 	 * Returns whether the pack is internal and hidden from end users.
 	 */
-	default boolean fabric$isHidden() {
+	default boolean fabric_isHidden() {
 		return false;
 	}
 
@@ -38,10 +38,10 @@ public interface FabricPack {
 	 *
 	 * @return {@code true} if every parent is enabled, or {@code false} otherwise
 	 */
-	default boolean fabric$parentsEnabled(Set<String> enabled) {
+	default boolean fabric_parentsEnabled(Set<String> enabled) {
 		return true;
 	}
 
-	default void fabric$setParentsPredicate(Predicate<Set<String>> predicate) {
+	default void fabric_setParentsPredicate(Predicate<Set<String>> predicate) {
 	}
 }

@@ -24,6 +24,6 @@ import net.minecraft.network.chat.Component;
 
 @Mixin(CycleButton.class)
 public interface CycleButtonAccessor {
-	@Accessor
-	Component getName();
+	@Accessor("name")
+	Component fabric_getName();
 }

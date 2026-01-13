@@ -23,8 +23,8 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 @Mixin(targets = "net/minecraft/client/gui/render/GuiRenderer$Draw")
 interface DrawAccessor {
 	@Accessor("pipeline")
-	RenderPipeline fabric$pipeline();
+	RenderPipeline fabric_getPipeline();
 
 	@Accessor("indexCount")
-	int fabric$indexCount();
+	int fabric_getIndexCount();
 }

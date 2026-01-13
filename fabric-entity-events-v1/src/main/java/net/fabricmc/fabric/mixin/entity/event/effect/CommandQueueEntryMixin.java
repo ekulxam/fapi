@@ -52,7 +52,7 @@ public final class CommandQueueEntryMixin<T extends ExecutionCommandSource<T>, S
 
 		// if this isn't a LiteralCommandNode, we have bigger problems
 		// since this is the first node
-		if (!(((ParsedCommandNode<S>) ((BuildContextsAccessor<?>) topLevel).getCommand().getTopContext().getNodes().getFirst()).getNode() instanceof LiteralCommandNode<S> commandNode)) {
+		if (!(((ParsedCommandNode<S>) ((BuildContextsAccessor<?>) topLevel).fabric_getCommand().getTopContext().getNodes().getFirst()).getNode() instanceof LiteralCommandNode<S> commandNode)) {
 			original.call(executionContext);
 			return;
 		}

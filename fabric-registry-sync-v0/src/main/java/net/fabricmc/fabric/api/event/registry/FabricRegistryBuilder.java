@@ -146,7 +146,7 @@ public final class FabricRegistryBuilder<T, R extends WritableRegistry<T>> {
 		}
 
 		//noinspection unchecked
-		BuiltInRegistriesAccessor.getWRITABLE_REGISTRY().register((ResourceKey<WritableRegistry<?>>) key, registry, RegistrationInfo.BUILT_IN);
+		BuiltInRegistriesAccessor.fabric_getWritableRegistry().register((ResourceKey<WritableRegistry<?>>) key, registry, RegistrationInfo.BUILT_IN);
 
 		return registry;
 	}

@@ -26,6 +26,6 @@ import net.minecraft.network.Connection;
 @Mixin(Minecraft.class)
 public interface MinecraftAccessor {
 	@Nullable
-	@Accessor
-	Connection getPendingConnection();
+	@Accessor("pendingConnection")
+	Connection fabric_getPendingConnection();
 }

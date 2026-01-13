@@ -61,7 +61,7 @@ public abstract class RuleListEntryTypeVisitorMixin implements GameRuleTypeVisit
 
 	@Unique
 	EditGameRulesScreen getThis() {
-		return ((EditGameRulesScreenRuleListAccessor) this$1).getThis();
+		return ((EditGameRulesScreenRuleListAccessor) this$1).fabric_getThis();
 	}
 
 	/**

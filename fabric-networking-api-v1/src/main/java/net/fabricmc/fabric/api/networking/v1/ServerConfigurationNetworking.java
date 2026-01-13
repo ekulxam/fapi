@@ -230,7 +230,7 @@ public final class ServerConfigurationNetworking {
 	public static MinecraftServer getServer(ServerConfigurationPacketListenerImpl listener) {
 		Objects.requireNonNull(listener, "Packet listener cannot be null");
 
-		return ((ServerCommonPacketListenerImplAccessor) listener).getServer();
+		return ((ServerCommonPacketListenerImplAccessor) listener).fabric_getServer();
 	}
 
 	/**

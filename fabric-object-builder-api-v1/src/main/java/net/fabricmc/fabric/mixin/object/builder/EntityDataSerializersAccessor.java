@@ -26,7 +26,7 @@ import net.minecraft.util.CrudeIncrementalIntIdentityHashBiMap;
 @Mixin(EntityDataSerializers.class)
 public interface EntityDataSerializersAccessor {
 	@Accessor("SERIALIZERS")
-	static CrudeIncrementalIntIdentityHashBiMap<EntityDataSerializer<?>> fabric_getDataHandlers() {
+	static CrudeIncrementalIntIdentityHashBiMap<EntityDataSerializer<?>> fabric_getSerializers() {
 		throw new AssertionError("Untransformed @Accessor");
 	}
 }

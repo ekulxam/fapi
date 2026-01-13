@@ -55,7 +55,7 @@ public final class TillableBlockRegistry {
 	 */
 	public static void register(Block input, Predicate<UseOnContext> usagePredicate, Consumer<UseOnContext> tillingAction) {
 		Objects.requireNonNull(input, "input block cannot be null");
-		HoeItemAccessor.getTillables().put(input, Pair.of(usagePredicate, tillingAction));
+		HoeItemAccessor.fabric_getTillables().put(input, Pair.of(usagePredicate, tillingAction));
 	}
 
 	/**

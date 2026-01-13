@@ -27,7 +27,7 @@ import net.minecraft.client.model.geom.ModelLayers;
 @Mixin(ModelLayers.class)
 public interface ModelLayersAccessor {
 	@Accessor("ALL_MODELS")
-	static Set<ModelLayerLocation> getLayers() {
+	static Set<ModelLayerLocation> fabric_getAllModels() {
 		throw new AssertionError("This should not occur!");
 	}
 }

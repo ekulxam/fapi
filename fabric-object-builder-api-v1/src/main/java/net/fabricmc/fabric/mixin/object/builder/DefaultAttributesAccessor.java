@@ -29,7 +29,7 @@ import net.minecraft.world.entity.ai.attributes.DefaultAttributes;
 @Mixin(DefaultAttributes.class)
 public interface DefaultAttributesAccessor {
 	@Accessor("SUPPLIERS")
-	static Map<EntityType<? extends LivingEntity>, AttributeSupplier> getRegistry() {
+	static Map<EntityType<? extends LivingEntity>, AttributeSupplier> fabric_getSuppliers() {
 		throw new AssertionError("mixin dummy");
 	}
 }

@@ -40,7 +40,7 @@ public abstract class KeyedResourceReloaderMixin implements FabricResourceReload
 
 	@Override
 	@SuppressWarnings({"ConstantConditions"})
-	public Identifier fabric$getId() {
+	public Identifier fabric_getId() {
 		if (this.id == null) {
 			Object self = this;
 

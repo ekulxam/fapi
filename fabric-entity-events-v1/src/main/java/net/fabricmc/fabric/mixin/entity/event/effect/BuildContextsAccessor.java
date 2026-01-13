@@ -24,6 +24,6 @@ import net.minecraft.commands.execution.tasks.BuildContexts;
 
 @Mixin(BuildContexts.class)
 public interface BuildContextsAccessor<S> {
-	@Accessor
-	ContextChain<S> getCommand();
+	@Accessor("command")
+	ContextChain<S> fabric_getCommand();
 }

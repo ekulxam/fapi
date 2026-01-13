@@ -49,7 +49,7 @@ public class V2832Mixin {
 			String name, Type<K> keyType, Map<K, Supplier<TypeTemplate>> templates
 	) {
 		TaggedChoice<K> result = DSL.taggedChoiceLazy(name, keyType, templates);
-		((TaggedChoiceExtension) (Object) result).fabric$setFailSoft(true);
+		((TaggedChoiceExtension) (Object) result).fabric_setFailSoft(true);
 		return result;
 	}
 }

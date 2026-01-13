@@ -31,7 +31,7 @@ import net.minecraft.world.level.block.Block;
 @Mixin(HoeItem.class)
 public interface HoeItemAccessor {
 	@Accessor("TILLABLES")
-	static Map<Block, Pair<Predicate<UseOnContext>, Consumer<UseOnContext>>> getTillables() {
+	static Map<Block, Pair<Predicate<UseOnContext>, Consumer<UseOnContext>>> fabric_getTillables() {
 		throw new AssertionError("Untransformed @Accessor");
 	}
 }

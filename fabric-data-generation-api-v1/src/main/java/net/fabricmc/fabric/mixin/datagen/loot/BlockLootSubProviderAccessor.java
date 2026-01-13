@@ -24,6 +24,6 @@ import net.minecraft.data.loot.BlockLootSubProvider;
 
 @Mixin(BlockLootSubProvider.class)
 public interface BlockLootSubProviderAccessor {
-	@Accessor()
-	HolderLookup.Provider getRegistries();
+	@Accessor("registries")
+	HolderLookup.Provider fabric_getRegistries();
 }

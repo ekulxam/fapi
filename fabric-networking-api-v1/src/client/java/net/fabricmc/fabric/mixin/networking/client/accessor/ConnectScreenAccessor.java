@@ -24,6 +24,6 @@ import net.minecraft.network.Connection;
 
 @Mixin(ConnectScreen.class)
 public interface ConnectScreenAccessor {
-	@Accessor
-	Connection getConnection();
+	@Accessor("connection")
+	Connection fabric_getConnection();
 }

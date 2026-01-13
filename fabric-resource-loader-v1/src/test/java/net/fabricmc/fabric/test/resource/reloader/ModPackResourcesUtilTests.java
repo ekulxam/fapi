@@ -222,7 +222,7 @@ public class ModPackResourcesUtilTests {
 						false)
 		);
 
-		if (parents != null) ((FabricPack) pack).fabric$setParentsPredicate(parents);
+		if (parents != null) ((FabricPack) pack).fabric_setParentsPredicate(parents);
 
 		packs.put(id, pack);
 		return pack;

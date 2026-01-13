@@ -110,7 +110,7 @@ public final class BlockApiLookupImpl<A, C> implements BlockApiLookup<A, C> {
 	@Override
 	public void registerSelf(BlockEntityType<?>... blockEntityTypes) {
 		for (BlockEntityType<?> blockEntityType : blockEntityTypes) {
-			Block supportBlock = ((BlockEntityTypeAccessor) blockEntityType).getBlocks().iterator().next();
+			Block supportBlock = ((BlockEntityTypeAccessor) blockEntityType).fabric_getValidBlocks().iterator().next();
 			Objects.requireNonNull(supportBlock, "Could not get a support block for block entity type.");
 			BlockEntity blockEntity = blockEntityType.create(BlockPos.ZERO, supportBlock.defaultBlockState());
 			Objects.requireNonNull(blockEntity, "Instantiated block entity may not be null.");
@@ -164,7 +164,7 @@ public final class BlockApiLookupImpl<A, C> implements BlockApiLookup<A, C> {
 				}
 			};
 
-			Block[] blocks = ((BlockEntityTypeAccessor) blockEntityType).getBlocks().toArray(new Block[0]);
+			Block[] blocks = ((BlockEntityTypeAccessor) blockEntityType).fabric_getValidBlocks().toArray(new Block[0]);
 			registerForBlocks(nullCheckedProvider, blocks);
 		}
 	}

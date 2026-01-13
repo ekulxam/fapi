@@ -59,7 +59,7 @@ public final class FabricEntityDataRegistryImpl {
 			throw new IllegalStateException("Already stored vanilla handlers!");
 		}
 
-		CrudeIncrementalIntIdentityHashBiMap<EntityDataSerializer<?>> dataHandlers = EntityDataSerializersAccessor.fabric_getDataHandlers();
+		CrudeIncrementalIntIdentityHashBiMap<EntityDataSerializer<?>> dataHandlers = EntityDataSerializersAccessor.fabric_getSerializers();
 
 		for (EntityDataSerializer<?> handler : dataHandlers) {
 			VANILLA_HANDLERS.add(handler);
@@ -69,7 +69,7 @@ public final class FabricEntityDataRegistryImpl {
 	}
 
 	private static void storeExternalHandlers() {
-		CrudeIncrementalIntIdentityHashBiMap<EntityDataSerializer<?>> dataHandlers = EntityDataSerializersAccessor.fabric_getDataHandlers();
+		CrudeIncrementalIntIdentityHashBiMap<EntityDataSerializer<?>> dataHandlers = EntityDataSerializersAccessor.fabric_getSerializers();
 
 		for (EntityDataSerializer<?> handler : dataHandlers) {
 			if (VANILLA_HANDLERS.contains(handler)) continue;
@@ -93,7 +93,7 @@ public final class FabricEntityDataRegistryImpl {
 	 * </ul>
 	*/
 	private static void reorderHandlers() {
-		CrudeIncrementalIntIdentityHashBiMap<EntityDataSerializer<?>> dataHandlers = EntityDataSerializersAccessor.fabric_getDataHandlers();
+		CrudeIncrementalIntIdentityHashBiMap<EntityDataSerializer<?>> dataHandlers = EntityDataSerializersAccessor.fabric_getSerializers();
 		LOGGER.debug("Reordering entity data serializers containing {} entries", dataHandlers.size());
 
 		// Reset the map so that handlers can be added back in a new order

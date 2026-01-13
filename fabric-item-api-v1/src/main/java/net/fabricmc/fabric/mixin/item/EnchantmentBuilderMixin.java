@@ -40,12 +40,12 @@ public class EnchantmentBuilderMixin implements EnchantmentUtil.BuilderExtension
 	}
 
 	@Override
-	public void fabric$resetModified() {
+	public void fabric_resetModified() {
 		didModify = false;
 	}
 
 	@Override
-	public boolean fabric$didModify() {
+	public boolean fabric_didModify() {
 		return didModify;
 	}
 }

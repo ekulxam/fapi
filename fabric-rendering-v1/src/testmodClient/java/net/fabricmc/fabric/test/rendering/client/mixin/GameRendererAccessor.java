@@ -24,6 +24,6 @@ import net.minecraft.client.renderer.GameRenderer;
 
 @Mixin(GameRenderer.class)
 public interface GameRendererAccessor {
-	@Accessor
-	GuiRenderer getGuiRenderer();
+	@Accessor("guiRenderer")
+	GuiRenderer fabric_getGuiRenderer();
 }

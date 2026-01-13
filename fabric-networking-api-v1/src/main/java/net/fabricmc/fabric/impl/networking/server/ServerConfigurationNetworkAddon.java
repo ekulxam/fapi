@@ -52,7 +52,7 @@ public final class ServerConfigurationNetworkAddon extends AbstractChanneledNetw
 	private boolean isReconfiguring = false;
 
 	public ServerConfigurationNetworkAddon(ServerConfigurationPacketListenerImpl listener, MinecraftServer server) {
-		super(ServerNetworkingImpl.CONFIGURATION, ((ServerCommonPacketListenerImplAccessor) listener).getConnection(), "ServerConfigurationNetworkAddon for " + listener.getOwner().name());
+		super(ServerNetworkingImpl.CONFIGURATION, ((ServerCommonPacketListenerImplAccessor) listener).fabric_getConnection(), "ServerConfigurationNetworkAddon for " + listener.getOwner().name());
 		this.listener = listener;
 		this.server = server;
 		this.context = new ContextImpl(server, listener, this);
@@ -214,7 +214,7 @@ public final class ServerConfigurationNetworkAddon extends AbstractChanneledNetw
 	}
 
 	public ChannelInfoHolder getChannelInfoHolder() {
-		return (ChannelInfoHolder) ((ServerCommonPacketListenerImplAccessor) listener).getConnection();
+		return (ChannelInfoHolder) ((ServerCommonPacketListenerImplAccessor) listener).fabric_getConnection();
 	}
 
 	private record ContextImpl(MinecraftServer server, ServerConfigurationPacketListenerImpl packetListener, PacketSender responseSender) implements ServerConfigurationNetworking.Context {

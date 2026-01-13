@@ -102,7 +102,7 @@ abstract class MultiPartModelMixin implements BlockStateModel {
 
 	@Override
 	public TextureAtlasSprite particleIcon(BlockAndTintGetter level, BlockPos pos, BlockState state) {
-		return ((MultiPartModelSharedBakedStateAccessor) (Object) shared).getSelectors().getFirst().model().particleIcon(
+		return ((MultiPartModelSharedBakedStateAccessor) (Object) shared).fabric_getSelectors().getFirst().model().particleIcon(
 				level, pos, state);
 	}
 }

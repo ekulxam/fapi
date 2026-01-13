@@ -42,7 +42,7 @@ import net.fabricmc.fabric.impl.base.toposort.SortableNode;
 import net.fabricmc.fabric.mixin.client.particle.ParticleEngineAccessor;
 
 public final class ParticleGroupRegistryImpl {
-	public static final ParticleGroupRegistryImpl INSTANCE = new ParticleGroupRegistryImpl(ParticleEngineAccessor.getParticleRenderTypes());
+	public static final ParticleGroupRegistryImpl INSTANCE = new ParticleGroupRegistryImpl(ParticleEngineAccessor.fabric_getRenderOrder());
 
 	private final List<ParticleRenderType> renderTypes;
 	private final Map<Identifier, ParticleTextureNode> nodes = new HashMap<>();

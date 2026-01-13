@@ -77,7 +77,7 @@ public final class FabricDefaultAttributeRegistry {
 	 * @see	FabricEntityType.Builder.Living#defaultAttributes(Supplier)
 	 */
 	public static void register(EntityType<? extends LivingEntity> type, AttributeSupplier container) {
-		if (DefaultAttributesAccessor.getRegistry().put(type, container) != null) {
+		if (DefaultAttributesAccessor.fabric_getSuppliers().put(type, container) != null) {
 			LOGGER.debug("Overriding existing registration for entity type {}", BuiltInRegistries.ENTITY_TYPE.getKey(type));
 		}
 	}

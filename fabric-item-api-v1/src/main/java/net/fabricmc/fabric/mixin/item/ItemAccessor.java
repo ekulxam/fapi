@@ -25,7 +25,7 @@ import net.minecraft.world.item.Item;
 
 @Mixin(Item.class)
 public interface ItemAccessor {
-	@Accessor
+	@Accessor("components")
 	@Mutable
-	void setComponents(DataComponentMap components);
+	void fabric_setComponents(DataComponentMap components);
 }

@@ -44,6 +44,6 @@ public abstract class ServerConfigurationPacketListenerImplMixin extends ServerC
 	 */
 	@ModifyArg(method = "startConfiguration", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/network/config/SynchronizeRegistriesTask;<init>(Ljava/util/List;Lnet/minecraft/core/LayeredRegistryAccess;)V", ordinal = 0))
 	public List<KnownPack> filterKnownPacks(List<KnownPack> currentKnownPacks) {
-		return ((FabricOriginalKnownPacksGetter) this.server).fabric$getOriginalKnownPacks().stream().filter(currentKnownPacks::contains).toList();
+		return ((FabricOriginalKnownPacksGetter) this.server).fabric_getOriginalKnownPacks().stream().filter(currentKnownPacks::contains).toList();
 	}
 }

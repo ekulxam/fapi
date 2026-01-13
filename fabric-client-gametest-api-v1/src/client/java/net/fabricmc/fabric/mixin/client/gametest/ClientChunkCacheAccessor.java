@@ -23,6 +23,6 @@ import net.minecraft.client.multiplayer.ClientChunkCache;
 
 @Mixin(ClientChunkCache.class)
 public interface ClientChunkCacheAccessor {
-	@Accessor
-	ClientChunkCache.Storage getStorage();
+	@Accessor("storage")
+	ClientChunkCache.Storage fabric_getStorage();
 }

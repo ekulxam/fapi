@@ -62,9 +62,9 @@ public final class ServerLoginNetworkAddon extends AbstractNetworkAddon<ServerLo
 
 	public ServerLoginNetworkAddon(ServerLoginPacketListenerImpl listener) {
 		super(ServerNetworkingImpl.LOGIN, "ServerLoginNetworkAddon for " + listener.getUserName());
-		this.connection = ((ServerLoginPacketListenerImplAccessor) listener).getConnection();
+		this.connection = ((ServerLoginPacketListenerImplAccessor) listener).fabric_getConnection();
 		this.listener = listener;
-		this.server = ((ServerLoginPacketListenerImplAccessor) listener).getServer();
+		this.server = ((ServerLoginPacketListenerImplAccessor) listener).fabric_getServer();
 		this.queryIdFactory = QueryIdFactory.create();
 	}
 

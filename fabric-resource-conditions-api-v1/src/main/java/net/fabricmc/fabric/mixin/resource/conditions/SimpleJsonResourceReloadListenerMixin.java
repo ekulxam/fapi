@@ -54,13 +54,13 @@ public class SimpleJsonResourceReloadListenerMixin {
 		RegistryOps.@Nullable RegistryInfoLookup registryInfo = null;
 
 		if (dynamicOps instanceof RegistryOpsAccessor registryOps) {
-			registryInfo = registryOps.getRegistryInfoGetter();
+			registryInfo = registryOps.fabric_getLookupProvider();
 		}
 
 		if (resourceData.isJsonObject()) {
 			JsonObject obj = resourceData.getAsJsonObject();
 
-			final String dataType = ((FileToIdConverterAccessor) resourceFinder).getDirectoryName();
+			final String dataType = ((FileToIdConverterAccessor) resourceFinder).fabric_getPrefix();
 
 			if (!ResourceConditionsImpl.applyResourceConditions(obj, dataType, entry.getKey(), registryInfo)) {
 				return DataResult.success(SKIP_DATA_MARKER);

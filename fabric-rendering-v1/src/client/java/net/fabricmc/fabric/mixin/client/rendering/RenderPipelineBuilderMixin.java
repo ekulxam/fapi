@@ -99,7 +99,7 @@ class RenderPipelineBuilderMixin implements FabricRenderPipeline.Builder {
 			at = @At("RETURN")
 	)
 	private RenderPipeline copyUsePipelineDrawModeForGuiToPipeline(RenderPipeline original) {
-		((FabricRenderPipelineImpl) original).fabric$setUsePipelineDrawModeForGuiSetter(this.usePipelineDrawModeForGui.orElse(false));
+		((FabricRenderPipelineImpl) original).fabric_setUsePipelineDrawModeForGuiSetter(this.usePipelineDrawModeForGui.orElse(false));
 		return original;
 	}
 }

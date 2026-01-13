@@ -28,13 +28,13 @@ import net.minecraft.world.level.block.Block;
 @Mixin(AxeItem.class)
 public interface AxeItemAccessor {
 	@Accessor("STRIPPABLES")
-	static Map<Block, Block> getStrippables() {
+	static Map<Block, Block> fabric_getStrippables() {
 		throw new AssertionError("Untransformed @Accessor");
 	}
 
 	@Accessor("STRIPPABLES")
 	@Mutable
-	static void setStrippables(Map<Block, Block> strippedBlocks) {
+	static void fabric_setStrippables(Map<Block, Block> strippedBlocks) {
 		throw new AssertionError("Untransformed @Accessor");
 	}
 }

@@ -48,7 +48,7 @@ public final class StrippableBlockRegistryImpl {
 	}
 
 	private static Map<Block, Block> getRegistry() {
-		return ImmutableCollectionUtils.getAsMutableMap(AxeItemAccessor::getStrippables, AxeItemAccessor::setStrippables);
+		return ImmutableCollectionUtils.getAsMutableMap(AxeItemAccessor::fabric_getStrippables, AxeItemAccessor::fabric_setStrippables);
 	}
 
 	@Nullable

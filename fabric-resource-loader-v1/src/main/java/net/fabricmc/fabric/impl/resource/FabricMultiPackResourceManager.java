@@ -19,5 +19,5 @@ package net.fabricmc.fabric.impl.resource;
 import net.minecraft.server.packs.PackType;
 
 public interface FabricMultiPackResourceManager {
-	PackType fabric$getPackType();
+	PackType fabric_getPackType();
 }

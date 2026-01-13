@@ -66,7 +66,7 @@ public class ReloadableServerResourcesMixin implements FabricDataResourceStoreHo
 	}
 
 	@Override
-	public DataResourceStore.Mutable fabric$getDataResourceStore() {
+	public DataResourceStore.Mutable fabric_getDataResourceStore() {
 		return this.dataResourceStore;
 	}
 }

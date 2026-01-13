@@ -33,7 +33,7 @@ class RenderPipelineMixin implements FabricRenderPipelineImpl {
 	}
 
 	@Override
-	public void fabric$setUsePipelineDrawModeForGuiSetter(boolean usePipelineDrawModeForGui) {
+	public void fabric_setUsePipelineDrawModeForGuiSetter(boolean usePipelineDrawModeForGui) {
 		this.usePipelineDrawModeForGui = usePipelineDrawModeForGui;
 	}
 }

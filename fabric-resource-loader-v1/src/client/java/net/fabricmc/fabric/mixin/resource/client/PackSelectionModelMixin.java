@@ -49,13 +49,13 @@ public class PackSelectionModelMixin {
 	 */
 	@Inject(method = "<init>", at = @At("TAIL"))
 	private void removeHiddenPacksInit(Consumer<PackSelectionModel.EntryBase> updateCallback, Function iconIdSupplier, PackRepository packRepository, Consumer applier, CallbackInfo ci) {
-		this.selected.removeIf(profile -> ((FabricPack) profile).fabric$isHidden());
-		this.unselected.removeIf(profile -> ((FabricPack) profile).fabric$isHidden());
+		this.selected.removeIf(profile -> ((FabricPack) profile).fabric_isHidden());
+		this.unselected.removeIf(profile -> ((FabricPack) profile).fabric_isHidden());
 	}
 
 	@Inject(method = "findNewPacks", at = @At("TAIL"))
 	private void removeHiddenPacksRefresh(CallbackInfo ci) {
-		this.selected.removeIf(profile -> ((FabricPack) profile).fabric$isHidden());
-		this.unselected.removeIf(profile -> ((FabricPack) profile).fabric$isHidden());
+		this.selected.removeIf(profile -> ((FabricPack) profile).fabric_isHidden());
+		this.unselected.removeIf(profile -> ((FabricPack) profile).fabric_isHidden());
 	}
 }

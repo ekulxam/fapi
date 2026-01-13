@@ -19,5 +19,5 @@ package net.fabricmc.fabric.impl.client.rendering;
 import net.fabricmc.fabric.api.client.rendering.v1.FabricRenderPipeline;
 
 public interface FabricRenderPipelineImpl extends FabricRenderPipeline {
-	void fabric$setUsePipelineDrawModeForGuiSetter(boolean usePipelineDrawModeForGui);
+	void fabric_setUsePipelineDrawModeForGuiSetter(boolean usePipelineDrawModeForGui);
 }

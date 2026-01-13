@@ -54,10 +54,10 @@ public class TestClientLevelContextImpl implements TestClientLevelContext {
 	private static boolean areChunksLoaded(Minecraft client) {
 		int renderDistance = client.options.getEffectiveRenderDistance();
 		ClientLevel level = Objects.requireNonNull(client.level);
-		ClientChunkCache.Storage chunks = ((ClientChunkCacheAccessor) level.getChunkSource()).getStorage();
+		ClientChunkCache.Storage chunks = ((ClientChunkCacheAccessor) level.getChunkSource()).fabric_getStorage();
 		ClientChunkCacheStorageAccessor chunksAccessor = (ClientChunkCacheStorageAccessor) (Object) chunks;
-		int viewCenterX = chunksAccessor.getViewCenterX();
-		int viewCenterZ = chunksAccessor.getViewCenterZ();
+		int viewCenterX = chunksAccessor.fabric_getViewCenterX();
+		int viewCenterZ = chunksAccessor.fabric_getViewCenterZ();
 
 		for (int dz = -renderDistance; dz <= renderDistance; dz++) {
 			for (int dx = -renderDistance; dx <= renderDistance; dx++) {
@@ -72,6 +72,6 @@ public class TestClientLevelContextImpl implements TestClientLevelContext {
 
 	private static boolean areChunksRendered(Minecraft client) {
 		ClientLevel level = Objects.requireNonNull(client.level);
-		return ((ClientLevelAccessor) level).getLightUpdateQueue().isEmpty() && client.levelRenderer.hasRenderedAllSections();
+		return ((ClientLevelAccessor) level).fabric_getLightUpdateQueue().isEmpty() && client.levelRenderer.hasRenderedAllSections();
 	}
 }

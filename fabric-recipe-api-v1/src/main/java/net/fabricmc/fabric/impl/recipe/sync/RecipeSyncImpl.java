@@ -63,7 +63,7 @@ public class RecipeSyncImpl implements ModInitializer {
 			BuiltInRegistries.RECIPE_SERIALIZER.getOptional(identifier).ifPresent(set::add);
 		}
 
-		((SyncedSerializerAwareConnection) ((ServerCommonPacketListenerImplAccessor) context.packetListener()).getConnection())
+		((SyncedSerializerAwareConnection) ((ServerCommonPacketListenerImplAccessor) context.packetListener()).fabric_getConnection())
 				.fabric_setSyncedRecipeSerializers(set);
 	}
 
@@ -72,9 +72,9 @@ public class RecipeSyncImpl implements ModInitializer {
 			return;
 		}
 
-		Set<RecipeSerializer<?>> serializers = ((SyncedSerializerAwareConnection) ((ServerCommonPacketListenerImplAccessor) player.connection).getConnection()).fabric_getSyncedRecipeSerializers();
+		Set<RecipeSerializer<?>> serializers = ((SyncedSerializerAwareConnection) ((ServerCommonPacketListenerImplAccessor) player.connection).fabric_getConnection()).fabric_getSyncedRecipeSerializers();
 
-		SyncedSerializerAwarePreparedRecipe accessor = (SyncedSerializerAwarePreparedRecipe) ((RecipeManagerAccessor) player.level().recipeAccess()).getRecipes();
+		SyncedSerializerAwarePreparedRecipe accessor = (SyncedSerializerAwarePreparedRecipe) ((RecipeManagerAccessor) player.level().recipeAccess()).fabric_getRecipes();
 
 		var list = new ArrayList<ClientboundRecipeSyncPayload.Entry>();
 

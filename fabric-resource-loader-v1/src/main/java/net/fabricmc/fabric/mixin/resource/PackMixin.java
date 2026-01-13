@@ -57,17 +57,17 @@ abstract class PackMixin implements FabricPack {
 	}
 
 	@Override
-	public boolean fabric$isHidden() {
+	public boolean fabric_isHidden() {
 		return this.parentsPredicate != DEFAULT_PARENT_PREDICATE;
 	}
 
 	@Override
-	public boolean fabric$parentsEnabled(Set<String> enabled) {
+	public boolean fabric_parentsEnabled(Set<String> enabled) {
 		return this.parentsPredicate.test(enabled);
 	}
 
 	@Override
-	public void fabric$setParentsPredicate(Predicate<Set<String>> predicate) {
+	public void fabric_setParentsPredicate(Predicate<Set<String>> predicate) {
 		this.parentsPredicate = predicate;
 	}
 }

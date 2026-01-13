@@ -25,13 +25,13 @@ import net.minecraft.world.item.CreativeModeTab;
 
 @Mixin(CreativeModeTab.class)
 public interface CreativeModeTabAccessor {
-	@Accessor
+	@Accessor("row")
 	@Mutable
 	@Final
-	void setRow(CreativeModeTab.Row row);
+	void fabric_setRow(CreativeModeTab.Row row);
 
-	@Accessor
+	@Accessor("column")
 	@Mutable
 	@Final
-	void setColumn(int column);
+	void fabric_setColumn(int column);
 }

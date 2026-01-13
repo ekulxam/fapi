@@ -27,21 +27,21 @@ import net.minecraft.world.level.levelgen.DebugLevelSource;
 
 @Mixin(DebugLevelSource.class)
 public interface DebugLevelSourceAccessor {
-	@Accessor
+	@Accessor("ALL_BLOCKS")
 	@Mutable
-	static void setALL_BLOCKS(List<BlockState> blockStates) {
+	static void fabric_setAllBlocks(List<BlockState> blockStates) {
 		throw new UnsupportedOperationException();
 	}
 
-	@Accessor
+	@Accessor("GRID_WIDTH")
 	@Mutable
-	static void setGRID_WIDTH(int length) {
+	static void fabric_setGridWidth(int length) {
 		throw new UnsupportedOperationException();
 	}
 
-	@Accessor
+	@Accessor("GRID_HEIGHT")
 	@Mutable
-	static void setGRID_HEIGHT(int length) {
+	static void fabric_setGridHeight(int length) {
 		throw new UnsupportedOperationException();
 	}
 }

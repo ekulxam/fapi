@@ -27,5 +27,5 @@ import net.minecraft.client.renderer.block.model.multipart.MultiPartModel;
 @Mixin(MultiPartModel.SharedBakedState.class)
 public interface MultiPartModelSharedBakedStateAccessor {
 	@Accessor("selectors")
-	List<MultiPartModel.Selector<BlockStateModel>> getSelectors();
+	List<MultiPartModel.Selector<BlockStateModel>> fabric_getSelectors();
 }

@@ -70,7 +70,7 @@ public class VanillaStorageTests {
 		ContainerStorage furnaceWrapper = ContainerStorage.of(furnace, null);
 
 		helper.runAtTickTime(5, () -> {
-			if (accessor.getCookingTimeSpent() <= 0) {
+			if (accessor.fabric_getCookingTimer() <= 0) {
 				throw helper.assertionException("Furnace should have started cooking.");
 			}
 
@@ -80,7 +80,7 @@ public class VanillaStorageTests {
 				}
 			}
 
-			if (accessor.getCookingTimeSpent() <= 0) {
+			if (accessor.fabric_getCookingTimer() <= 0) {
 				throw helper.assertionException("Furnace should still cook after simulation.");
 			}
 
@@ -92,7 +92,7 @@ public class VanillaStorageTests {
 				transaction.commit();
 			}
 
-			if (accessor.getCookingTimeSpent() != 0) {
+			if (accessor.fabric_getCookingTimer() != 0) {
 				throw helper.assertionException("Furnace should have reset cook time after being emptied.");
 			}
 

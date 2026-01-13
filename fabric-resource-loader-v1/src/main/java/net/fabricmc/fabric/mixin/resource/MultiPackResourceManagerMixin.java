@@ -41,7 +41,7 @@ public class MultiPackResourceManagerMixin implements FabricMultiPackResourceMan
 	}
 
 	@Override
-	public PackType fabric$getPackType() {
+	public PackType fabric_getPackType() {
 		return this.packType;
 	}
 }

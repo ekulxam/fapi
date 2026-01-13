@@ -24,8 +24,8 @@ import net.minecraft.core.registries.BuiltInRegistries;
 
 @Mixin(BuiltInRegistries.class)
 public interface BuiltInRegistriesAccessor<T> {
-	@Accessor()
-	static WritableRegistry<WritableRegistry<?>> getWRITABLE_REGISTRY() {
+	@Accessor("WRITABLE_REGISTRY")
+	static WritableRegistry<WritableRegistry<?>> fabric_getWritableRegistry() {
 		throw new UnsupportedOperationException();
 	}
 }

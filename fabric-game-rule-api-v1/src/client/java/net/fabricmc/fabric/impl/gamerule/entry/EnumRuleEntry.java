@@ -43,13 +43,13 @@ public final class EnumRuleEntry<E extends Enum<E>> extends EditGameRulesScreen.
 
 		// Base translation key needs to be set before the button widget is created.
 		this.rootTranslationKey = translationKey;
-		this.button = Button.builder(this.getValueComponent(accessor.getGameRules().get(enumRule)), (button) -> {
-			accessor.getGameRules().set(enumRule,
+		this.button = Button.builder(this.getValueComponent(accessor.fabric_getGameRules().get(enumRule)), (button) -> {
+			accessor.fabric_getGameRules().set(enumRule,
 					((RuleTypeExtensions) (Object) enumRule).fabric_enumCycle(
-							accessor.getGameRules().get(enumRule)
+							accessor.fabric_getGameRules().get(enumRule)
 					),
 					null);
-			button.setMessage(this.getValueComponent(accessor.getGameRules().get(enumRule)));
+			button.setMessage(this.getValueComponent(accessor.fabric_getGameRules().get(enumRule)));
 		}).bounds(10, 5, 42, 20).build();
 
 		this.children.add(this.button);

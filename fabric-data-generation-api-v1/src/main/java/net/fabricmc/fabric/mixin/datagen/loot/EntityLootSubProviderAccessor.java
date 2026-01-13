@@ -24,6 +24,6 @@ import net.minecraft.data.loot.EntityLootSubProvider;
 
 @Mixin(EntityLootSubProvider.class)
 public interface EntityLootSubProviderAccessor {
-	@Accessor()
-	HolderLookup.Provider getRegistries();
+	@Accessor("registries")
+	HolderLookup.Provider fabric_getRegistries();
 }
